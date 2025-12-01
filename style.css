@@ -128,7 +128,7 @@ body {
     justify-content: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #2563eb 100%);
     color: var(--white);
-    padding-top: 80px;
+    padding: 80px 0 100px 0;
     position: relative;
     overflow: hidden;
 }
@@ -150,6 +150,8 @@ body {
     text-align: center;
     animation: fadeInUp 1s ease;
     max-width: 900px;
+    padding: 0 20px;
+    margin: 0 auto;
 }
 
 .home-text {
@@ -183,7 +185,7 @@ body {
 
 .subtitle {
     font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     opacity: 0.9;
     line-height: 1.6;
 }
@@ -195,6 +197,8 @@ body {
     gap: 1.5rem;
     margin-bottom: 2.5rem;
 }
+
+/* Ensure contact info only shows in home section - already handled above */
 
 .contact-link {
     color: var(--white);
@@ -221,6 +225,7 @@ body {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .btn {
@@ -262,7 +267,17 @@ body {
 /* Section Styles */
 section {
     padding: 100px 0;
+    position: relative;
+    overflow: visible;
 }
+
+/* Ensure contact info only appears in home section */
+section:not(.home) .home-contact-info,
+section:not(.home) .home-buttons {
+    display: none !important;
+}
+
+/* Home section overflow already handled in main .home rule above */
 
 .section-title {
     font-size: 2.8rem;
@@ -288,6 +303,17 @@ section {
 /* About Section */
 .about {
     background: var(--light-color);
+    position: relative;
+    padding-top: 100px;
+    margin-top: 0;
+    clear: both;
+}
+
+/* Hide any contact info that might appear outside home section */
+.about .home-contact-info,
+.about .contact-link,
+section:not(.home) .home-contact-info {
+    display: none !important;
 }
 
 .about-content {
@@ -750,6 +776,13 @@ section {
 .cert-link:hover {
     gap: 0.8rem;
     color: var(--secondary-color);
+}
+
+.cert-note {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
 /* Contact Section */

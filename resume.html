@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madhu Sudhan Kambam - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #1e293b;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 11pt;
+            color: #64748b;
+            margin-top: 10px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #1e293b;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Professional Summary */
+        .summary {
+            font-size: 11pt;
+            text-align: justify;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        .summary strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category strong {
+            color: #1e293b;
+            font-size: 10.5pt;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .skill-items {
+            font-size: 10pt;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Experience & Education */
+        .item {
+            margin-bottom: 18px;
+            page-break-inside: avoid;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .item-company {
+            font-size: 11pt;
+            color: #2563eb;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .item-date {
+            font-size: 10pt;
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .item-type {
+            font-size: 9.5pt;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .item-list {
+            list-style: none;
+            padding-left: 0;
+            font-size: 10pt;
+            color: #475569;
+        }
+
+        .item-list li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .item-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .item-list li strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 15px;
+            page-break-inside: avoid;
+        }
+
+        .project-title {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 5px;
+        }
+
+        .project-tech {
+            font-size: 9.5pt;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        /* Certifications */
+        .cert-item {
+            margin-bottom: 10px;
+            font-size: 10pt;
+            color: #475569;
+        }
+
+        .cert-item strong {
+            color: #1e293b;
+        }
+
+        .cert-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 9pt;
+            margin-left: 5px;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 30px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+            }
+
+            .item {
+                page-break-inside: avoid;
+            }
+
+            a {
+                color: #2563eb;
+            }
+
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+                font-size: 8pt;
+                color: #64748b;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 20px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>MADHU SUDHAN KAMBAM</h1>
+            <div class="contact-info">
+                <span>📍 Kadapa, AP, India</span>
+                <span>📞 +91 7674820913</span>
+                <span>✉️ <a href="mailto:madhufresher3001@gmail.com">madhufresher3001@gmail.com</a></span>
+                <span>🔗 <a href="https://www.linkedin.com/in/madhusudhan-kambam-9324551b1" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/Kambam-M-S" target="_blank">GitHub</a></span>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Analytical and precise <strong>Data Analyst</strong> skilled in <strong>SQL, Python, Power BI, and Excel</strong>. 
+                Experienced in delivering business-impacting insights through real-world projects across fraud detection, 
+                supply chain, and marketing analytics. Known for building automated dashboards, reducing manual effort by 
+                <strong>30–50%</strong>, and delivering predictive models with <strong>85–92% accuracy</strong>. Eager to use 
+                technical expertise and analytical abilities to make better judgments in a fast-paced company.
+            </p>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <strong>Languages:</strong>
+                    <div class="skill-items">Python, SQL</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Tools:</strong>
+                    <div class="skill-items">Power BI, Microsoft Excel, Tableau (Basic), GitHub, Jupyter Notebook</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Techniques:</strong>
+                    <div class="skill-items">Data Cleaning, Statistical Analysis, Data Visualization, Predictive Modeling</div>
+                </div>
+                <div class="skill-category">
+                    <strong>Concepts:</strong>
+                    <div class="skill-items">Business KPIs, Database Design, ETL Pipelines, Data Modeling</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="project-item">
+                <div class="project-title">Data Engineering Project: Batch Data Ingestion and Processing Pipeline</div>
+                <div class="project-tech">SQL, Notion, Draw.io, Python</div>
+                <ul class="item-list">
+                    <li>Built a MySQL data pipeline using stored procedures, improving batch query performance by <strong>25%</strong></li>
+                    <li>Documented data flow and processes using Notion, improving stakeholder collaboration by <strong>20%</strong></li>
+                    <li>Automated batch data ingestion with Python, cutting manual processing time by <strong>30%</strong></li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Credit Card Fraud Detection</div>
+                <div class="project-tech">Python, SQL</div>
+                <ul class="item-list">
+                    <li>Developed ML model detecting fraud with <strong>92% precision</strong> across 50,000+ transactions</li>
+                    <li>Evaluated 50,000+ historical transactions using SQL queries to identify fraud patterns</li>
+                    <li>Delivered insights in a mentor presentation—recommended for inclusion in project showcase</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Supply Chain Management Analysis</div>
+                <div class="project-tech">Excel, Power BI</div>
+                <ul class="item-list">
+                    <li>Optimized supply chain efficiency by analyzing product performance for a dataset of 5,000+ items</li>
+                    <li>Reduced delivery delays by <strong>15%</strong> via visual performance monitoring</li>
+                    <li>Automated data cleaning processes in Excel, saving 10 hours of manual work weekly</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Bank Marketing Prediction</div>
+                <div class="project-tech">Python, SQL</div>
+                <ul class="item-list">
+                    <li>Predicted client subscription to term deposits using logistic regression, achieving <strong>88% accuracy</strong></li>
+                    <li>Extracted and cleaned 20,000+ records using SQL for predictive analysis</li>
+                    <li>Visualized campaign performance metrics in Power BI for stakeholder presentations</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">Tata Data Visualization Virtual Internship</div>
+                <div class="project-tech">Power BI</div>
+                <ul class="item-list">
+                    <li>Designed dashboards to visualize business performance metrics for Tata Group's dataset</li>
+                    <li>Improved data accessibility for stakeholders by <strong>25%</strong> through interactive reports</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="project-title">IBM Capstone Project</div>
+                <div class="project-tech">Python, SQL</div>
+                <ul class="item-list">
+                    <li>Investigated real-world dataset to uncover business trends, delivering a 15-page report</li>
+                    <li>Retrieved and cleansed supply chain datasets using SQL, subsequently employing Python to build predictive models; findings enabled a <strong>15% improvement</strong> in product delivery efficiency</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Analyst Intern</div>
+                        <div class="item-company">Unified Mentor</div>
+                    </div>
+                    <div class="item-date">November 2024 – January 2025</div>
+                </div>
+                <div class="item-type">Virtual Internship</div>
+                <ul class="item-list">
+                    <li>Analyzed delivery data, improving product efficiency by <strong>15%</strong> in mock campaigns</li>
+                    <li>Developed predictive models for bank marketing campaigns, increasing lead conversion by <strong>10%</strong></li>
+                    <li>Contributed to fraud detection systems, processing 50,000+ transactions</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Data Analytics Intern</div>
+                        <div class="item-company">360DigiTMG</div>
+                    </div>
+                    <div class="item-date">March 2024 – July 2024</div>
+                </div>
+                <div class="item-type">Internship</div>
+                <ul class="item-list">
+                    <li>Collaborated with industry experts to analyze datasets using SQL and Python</li>
+                    <li>Created 10+ Power BI dashboards to present insights, adopted by training team</li>
+                    <li>Completed rigorous Data Analytics Program with hands-on projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">Professional Program in Data Analytics</div>
+                        <div class="item-company">360DigiTMG (State University of New York)</div>
+                    </div>
+                    <div class="item-date">October 2023 – December 2024</div>
+                </div>
+                <ul class="item-list" style="list-style: none; padding-left: 0;">
+                    <li style="padding-left: 0;"><strong>Major:</strong> Data Analytics | <strong>Minor:</strong> Python, SQL</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <div>
+                        <div class="item-title">B.Tech, Computer Science and Engineering</div>
+                        <div class="item-company">YSR Engineering College of YVU, Proddatur, AP</div>
+                    </div>
+                    <div class="item-date">August 2019 – August 2023</div>
+                </div>
+                <ul class="item-list" style="list-style: none; padding-left: 0;">
+                    <li style="padding-left: 0;"><strong>Minor:</strong> Disaster Management and Green Building Technology</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-item">
+                <strong>Professional Data Analytics Program,</strong> 360DigiTMG 
+                <a href="certificates/01_360DigiTMG_Professional_Data_Analytics.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">(View Certificate)</a>
+            </div>
+            <div class="cert-item">
+                <strong>Databases and SQL for Data Science with Python,</strong> IBM 
+                <a href="certificates/02_IBM_Databases_SQL_Data_Science.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">(View Certificate)</a>
+            </div>
+            <div class="cert-item">
+                <strong>SQL Certification,</strong> HackerRank 
+                <a href="certificates/03_HackerRank_SQL_Certification.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">(View Certificate)</a>
+            </div>
+            <div class="cert-item">
+                <strong>Tata Data Visualization Virtual Internship,</strong> Forage 
+                <a href="certificates/04_Forage_Tata_Data_Visualization.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">(View Certificate)</a>
+            </div>
+            <div class="cert-item">
+                <strong>Data Analyst Virtual Internship,</strong> Unified Mentor 
+                <a href="certificates/05_UnifiedMentor_Data_Analyst_Internship.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">(View Certificate)</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
